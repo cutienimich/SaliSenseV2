@@ -1,0 +1,27 @@
+from fastapi import FastAPI
+from fastapi.responses import JSONResponse
+from pydantic import BaseModel
+from transformers import pipeline
+
+app = FastAPI(title="Text classifier")
+
+# ✅ Load model only once (VERY IMPORTANT)
+pipe = pipeline(
+    "text-classification",
+    model="SamLowe/roberta-base-go_emotions"
+)
+
+class Payload(BaseModel):
+    text: str
+
+def classify_text(text):
+    return pipe(text)
+
+@app.post("/classify")
+async def classify(payload: Payload):
+
+    result = classify_text(payload.text)
+
+    return JSONResponse({
+        "data": result
+    })
