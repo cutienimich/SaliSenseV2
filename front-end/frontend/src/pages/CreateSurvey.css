@@ -1,0 +1,348 @@
+.create-survey {
+    min-height: 100vh;
+    min-width:100vw;
+    background-color: #f0f4ff;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.header {
+    background-color: #ffffff;
+    padding: 0 32px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 32px;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #FFB300;
+}
+
+.btn-back {
+    background: none;
+    border: 1px solid #FFB300;
+    color: #3b5bdb;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.btn-back:hover {
+    background-color: #303030;
+    color: white;
+}
+
+.main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    
+    
+}
+
+.main h1 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 24px;
+}
+
+.error-message {
+    background-color: #fff0f0;
+    color: #e53e3e;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+    border: 1px solid #feb2b2;
+}
+
+/* Form Card */
+.form-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.form-card h2 {
+    font-size: 1.2rem;
+    color: #303030;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.optional {
+    font-weight: 400;
+    color: #aaa;
+    font-size: 0.85rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Segoe UI', sans-serif;
+    transition: border 0.2s;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #3b5bdb;
+}
+
+/* Questions */
+.questions-section h2 {
+    font-size: 1.2rem;
+    color: #303030;
+    margin-bottom: 16px;
+}
+
+.question-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.question-number {
+    font-weight: 700;
+    color: #3b5bdb;
+    font-size: 0.95rem;
+}
+
+.btn-remove {
+    background: none;
+    border: 1px solid #e53e3e;
+    color: #e53e3e;
+    padding: 4px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.btn-remove:hover {
+    background-color: #e53e3e;
+    color: white;
+}
+
+.btn-add-question {
+    width: 100%;
+    padding: 12px;
+    background: none;
+    border: 2px dashed #303030;
+    color: #303030;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 4px;
+}
+
+.btn-add-question:hover {
+    background-color: #ebf0ff;
+}
+
+/* Actions */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.btn-cancel {
+    width: 100%;
+    padding: 12px 24px;
+    background: none;
+    border: 1px solid #ccc;
+    color: #555;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-cancel:hover {
+    border-color: #999;
+    color: #333;
+}
+
+.btn-submit {
+    padding: 12px 24px;
+    background-color: #FF6F00;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #f5dc5d;
+}
+
+.btn-submit:disabled {
+    background-color: #a0aec0;
+    cursor: not-allowed;
+}
+
+/* ============================================
+   RESPONSIVE — TABLET (max-width: 768px)
+   ============================================ */
+@media (max-width: 768px) {
+    .header {
+        padding: 0 16px;
+    }
+
+    .main {
+        padding: 24px 16px;
+    }
+
+    .main h1 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+
+    .form-card {
+        padding: 20px;
+    }
+
+    .question-card {
+        padding: 20px;
+    }
+
+    .form-actions {
+        gap: 8px;
+    }
+
+    .btn-cancel, .btn-submit {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================================
+   RESPONSIVE — MOBILE (max-width: 480px)
+   ============================================ */
+@media (max-width: 480px) {
+    .header {
+        padding: 0 12px;
+        height: 56px;
+    }
+
+    .logo-text {
+        font-size: 1rem;
+    }
+
+    .logo-img {
+        height: 26px;
+    }
+
+    .btn-back {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
+    .main {
+        padding: 16px 12px;
+    }
+
+    .main h1 {
+        font-size: 1.2rem;
+        margin-bottom: 16px;
+    }
+
+    .form-card {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .form-card h2 {
+        font-size: 1.1rem;
+        margin-bottom: 16px;
+    }
+
+    .question-card {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        font-size: 0.95rem;
+        padding: 9px 12px;
+    }
+
+    .btn-add-question {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+        gap: 8px;
+    }
+
+    .btn-cancel, .btn-submit {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    .questions-section h2 {
+        font-size: 1.1rem;
+    }
+}

@@ -1,0 +1,63 @@
+.placeholder-page {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 20px;
+}
+
+.placeholder-card {
+    background: #2a2a2a;
+    border: 1px solid #404040;
+    border-radius: 16px;
+    padding: 48px 40px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.placeholder-img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.placeholder-card h2 {
+    font-size: 1.8rem;
+    color: #FFB300;
+}
+
+.placeholder-card p {
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.placeholder-btn {
+    margin-top: 8px;
+    padding: 10px 24px;
+    background: #FFB300;
+    color: #303030;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.placeholder-btn:hover {
+    background: #FF6F00;
+    color: white;
+    transform: scale(1.02);
+}

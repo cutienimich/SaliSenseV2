@@ -1,0 +1,73 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+body {
+    background-color: #f0f4ff;
+    min-height: 100vh;
+}
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+#emoji-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+#emoji-bg img {
+    position: absolute;
+    opacity: 0.07;
+}
+
+/* LEFT SIDE — pababa */
+#emoji-bg img:nth-child(1)  { width: 132px; top: 5%;   left: 10%;  transform: rotate(-15deg); }
+#emoji-bg img:nth-child(2)  { width: 210px; top: 22%;  left: 5%;   transform: rotate(10deg); }
+#emoji-bg img:nth-child(3)  { width: 104px; top: 40%;  left: 1%;   transform: rotate(-20deg); }
+#emoji-bg img:nth-child(4)  { width: 175px; top: 58%;  left: 2%;   transform: rotate(15deg); }
+#emoji-bg img:nth-child(5)  { width: 140px; top: 76%;  left: 1%;   transform: rotate(-10deg); }
+#emoji-bg img:nth-child(6)  { width: 268px; top: 85%;  left: 32%;  transform: rotate(20deg); }
+
+/* RIGHT SIDE — pababa */
+#emoji-bg img:nth-child(7)  { width: 120px; top: 5%;   right: 10%; transform: rotate(15deg); }
+#emoji-bg img:nth-child(8)  { width: 230px; top: 22%;  right: 4%;  transform: rotate(-10deg); }
+#emoji-bg img:nth-child(9)  { width: 160px; top: 40%;  right: 3%;  transform: rotate(20deg); }
+#emoji-bg img:nth-child(10) { width: 195px; top: 58%;  right: 2%;  transform: rotate(-15deg); }
+#emoji-bg img:nth-child(11) { width: 145px; top: 70%;  right: 40%; transform: rotate(10deg); }
