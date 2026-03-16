@@ -52,7 +52,7 @@ export default function Dashboard() {
             {/* Header */}
             <header className="header">
                 <div className="header-logo">
-                    <img src={viteLogo} alt="Logo" className="logo-img" />
+                    <img src="/happy.png" alt="Logo" className="logo-img" />
                     <span className="logo-text">SaliSense</span>
                 </div>
 

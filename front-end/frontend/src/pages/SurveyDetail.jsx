@@ -399,7 +399,7 @@ const fetchAnalytics = async () => {
             {/* Header */}
             <header className="header">
                 <div className="header-logo" onClick={() => navigate('/dashboard')} style={{ cursor: 'pointer' }}>
-                    <img src={viteLogo} alt="Logo" className="logo-img" />
+                    <img src="/happy.png" alt="Logo" className="logo-img" />
                     <span className="logo-text">SaliSense</span>
                 </div>
                 <div className="header-profile" ref={dropdownRef}>
