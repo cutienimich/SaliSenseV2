@@ -48,3 +48,6 @@ app.include_router(analytics_router)
 app.include_router(auth_router)
 app.include_router(survey_router)
 app.include_router(field_router)
+@app.get("/")  # Root route
+def root():
+    return {"message": "SaliSense backend is running!"}
