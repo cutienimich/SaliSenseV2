@@ -20,13 +20,9 @@ def send_verification_email(to_email: str, token: str):
     html_content = f"""
     <html>
         <body>
-            <h2>Welcome to our platform!</h2>
+            <h2>Welcome to SaliSense!</h2>
             <p>Please verify your email by clicking the link below:</p>
-            <a href="{verification_link}" 
-               style="background-color:#4CAF50; color:white; padding:10px 20px; 
-                      text-decoration:none; border-radius:5px;">
-                Verify Account
-            </a>
+            <p><a href="{verification_link}">{verification_link}</a></p>
             <p>This link will expire in <strong>24 hours</strong>.</p>
             <p>If you did not register, ignore this email.</p>
         </body>
