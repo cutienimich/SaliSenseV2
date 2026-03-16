@@ -29,8 +29,10 @@ app = FastAPI(title="AI Survey System")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-      "http://localhost:5173",
-        "https://salisense15.vercel.app"
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "https://salisense15.vercel.app",
+        "https://salisense15-bd27myt42-michellepostrado26-2469s-projects.vercel.app",  # ← add yung exact URL mo
     ],
     allow_credentials=True,
     allow_methods=["*"],
