@@ -43,3 +43,8 @@ app.include_router(analytics_router)
 app.include_router(auth_router)
 app.include_router(survey_router)
 app.include_router(field_router)
+
+
+@app.get("/ping")
+async def ping():
+    return {"status": "ok"}
