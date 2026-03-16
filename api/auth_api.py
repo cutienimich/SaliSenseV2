@@ -7,7 +7,9 @@ from pydantic import BaseModel
 
 router = APIRouter()
 
-
+@app.get("/")  # Root route
+def root():
+    return {"message": "SaliSense backend is running!"}
 
 class ForgotPasswordPayload(BaseModel):
     email: str
