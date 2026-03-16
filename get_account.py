@@ -1,20 +1,15 @@
-import bcrypt
+from fastapi import FastAPI
+import psycopg2
+import os
 
-password = "12345"
-hashed = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
+app = FastAPI()
 
-emails = [
-    'test1@gmail.com',
-    'test2@gmail.com',
-    'test3@gmail.com',
-    'test4@gmail.com',
-    'test5@gmail.com',
-    'test6@gmail.com',
-    'test7@gmail.com',
-    'test8@gmail.com',
-]
+@app.get("/test-db")
+def test_db():
+    conn = psycopg2.connect(os.getenv("DATABASE_URL"))
+    cur = conn.cursor()
+    cur.execute("SELECT 1;")
+    result = cur.fetchone()
+    conn.close()
 
-print("-- Run this in PostgreSQL:")
-print()
-for email in emails:
-    print(f"INSERT INTO accounts (email, password, is_verified) VALUES ('{email}', '{hashed}', TRUE);")
+    return {"database": "connected", "result": result}

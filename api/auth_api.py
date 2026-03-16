@@ -7,6 +7,8 @@ from pydantic import BaseModel
 
 router = APIRouter()
 
+
+
 class ForgotPasswordPayload(BaseModel):
     email: str
 
