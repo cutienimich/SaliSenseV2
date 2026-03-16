@@ -32,7 +32,7 @@ app.add_middleware(
         "http://localhost:5173",
         "http://localhost:5174",
         "https://salisense15.vercel.app",
-        "https://salisense15-bd27myt42-michellepostrado26-2469s-projects.vercel.app",  # ← add yung exact URL mo
+        "https://*.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
