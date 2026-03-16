@@ -902,3 +902,13 @@
     }
 }
 
+
+
+/* SurveyDetail.css */
+.header, .main, .tabs, .tab-content,
+.question-item, .overview-card,
+.add-question-form, .responses-table,
+.question-analytics, .chart-box {
+    position: relative;
+    z-index: 1;
+}

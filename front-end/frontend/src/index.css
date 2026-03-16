@@ -63,33 +63,76 @@ button:focus-visible {
 
 #emoji-bg img {
     position: absolute;
-    opacity: 0.07;
+    opacity: 0.12;
 }
 
-/* LEFT SIDE — pababa */
-#emoji-bg img:nth-child(1)  { width: 132px; top: 5%;   left: 10%;  transform: rotate(-15deg); }
-#emoji-bg img:nth-child(2)  { width: 210px; top: 22%;  left: 59%;   transform: rotate(10deg); }
-#emoji-bg img:nth-child(3)  { width: 104px; top: 40%;  left: 1%;   transform: rotate(-20deg); }
-#emoji-bg img:nth-child(4)  { width: 175px; top: 58%;  left: 2%;   transform: rotate(15deg); }
-#emoji-bg img:nth-child(5)  { width: 140px; top: 76%;  left: 1%;   transform: rotate(-10deg); }
-#emoji-bg img:nth-child(6)  { width: 268px; top: 75%;  left: 32%;  transform: rotate(20deg); }
+/* ── TOP AREA ── */
+#emoji-bg img:nth-child(1)  { width: 80px;  top: 5%;    left: 30%;  transform: rotate(30deg);  }
+#emoji-bg img:nth-child(2)  { width: 45px;  top: 6%;    left: 10%;  transform: rotate(-40deg); }
+#emoji-bg img:nth-child(3)  { width: 40px;  top: 6%;    right: 50%; transform: rotate(-40deg); }
+#emoji-bg img:nth-child(4)  { width: 45px;  top: 5%;    right: 5%;  transform: rotate(-40deg); }
 
-/* RIGHT SIDE — pababa */
-#emoji-bg img:nth-child(7)  { width: 120px; top: 5%;   right: 10%; transform: rotate(15deg); }
-#emoji-bg img:nth-child(8)  { width: 80px; top: 22%;  right: 4%;  transform: rotate(-10deg); }
-#emoji-bg img:nth-child(9)  { width: 160px; top: 40%;  right: 3%;  transform: rotate(20deg); }
-#emoji-bg img:nth-child(10) { width: 95px; top: 58%;  right: 2%;  transform: rotate(-15deg); }
-#emoji-bg img:nth-child(11) { width: 145px; top: 70%;  right: 40%; transform: rotate(10deg); }
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* ── RIGHT AREA ── */
+#emoji-bg img:nth-child(5)  { width: 85px;  top: 8%;    right: 30%; transform: rotate(30deg);  }
+#emoji-bg img:nth-child(6)  { width: 80px;  top: 10%;   right: 3%;  transform: rotate(30deg);  }
+
+/* ── LEFT AREA ── */
+#emoji-bg img:nth-child(7)  { width: 40px;  top: 8%;    left: 5%;   transform: rotate(-40deg); }
+#emoji-bg img:nth-child(8)  { width: 65px;  top: 50%;   left: 1%;   transform: rotate(30deg);  }
+
+/* ── BOTTOM AREA ── */
+#emoji-bg img:nth-child(9)  { width: 90px;  bottom: 3%; left: 40%;  transform: rotate(30deg);  }
+#emoji-bg img:nth-child(10) { width: 45px;  bottom: 12%; right: 30%; transform: rotate(-40deg); }
+#emoji-bg img:nth-child(11) { width: 85px;  bottom: 5%; right: 8%;  transform: rotate(30deg);  }
+#emoji-bg img:nth-child(12) { width: 40px;  bottom: 12%; left: 15%; transform: rotate(-40deg); }
+
+/* ── MEDIUM STARS ── */
+#emoji-bg img:nth-child(13) { width: 35px;  top: 20%;   left: 1%;   transform: rotate(-40deg); }
+#emoji-bg img:nth-child(14) { width: 38px;  top: 35%;   right: 1%;  transform: rotate(-40deg); }
+#emoji-bg img:nth-child(15) { width: 32px;  bottom: 25%; left: 2%;  transform: rotate(-40deg); }
+#emoji-bg img:nth-child(16) { width: 36px;  top: 55%;   right: 1%;  transform: rotate(-40deg); }
+
+/* ── SMALL STARS ── */
+#emoji-bg img:nth-child(17) { width: 22px;  top: 15%;   left: 2%;   transform: rotate(30deg);  }
+#emoji-bg img:nth-child(18) { width: 24px;  bottom: 30%; right: 1%; transform: rotate(30deg);  }
+#emoji-bg img:nth-child(19) { width: 20px;  top: 70%;   left: 1%;   transform: rotate(30deg);  }
+
+/* ── HEARTS ── */
+#emoji-bg img:nth-child(20) { width: 28px;  top: 25%;   right: 1%;  transform: rotate(30deg);  }
+#emoji-bg img:nth-child(21) { width: 26px;  bottom: 20%; left: 1%;  transform: rotate(30deg);  }
+#emoji-bg img:nth-child(22) { width: 30px;  top: 65%;   right: 1%;  transform: rotate(30deg);  }
+
+/* ── TABLET ── */
+@media (max-width: 768px) {
+    #emoji-bg img { opacity: 0.08; }
+    #emoji-bg img:nth-child(1)  { width: 55px; }
+    #emoji-bg img:nth-child(5)  { width: 55px; }
+    #emoji-bg img:nth-child(6)  { width: 50px; }
+    #emoji-bg img:nth-child(8)  { width: 45px; }
+    #emoji-bg img:nth-child(9)  { width: 60px; }
+    #emoji-bg img:nth-child(11) { width: 55px; }
+    /* Hide middle emojis sa tablet */
+    #emoji-bg img:nth-child(3),
+    #emoji-bg img:nth-child(4),
+    #emoji-bg img:nth-child(10) { display: none; }
 }
 
+/* ── MOBILE ── */
+@media (max-width: 480px) {
+    #emoji-bg img { opacity: 0.06; }
+    #emoji-bg img:nth-child(1)  { width: 40px; }
+    #emoji-bg img:nth-child(5)  { width: 40px; }
+    #emoji-bg img:nth-child(6)  { width: 38px; }
+    #emoji-bg img:nth-child(8)  { width: 35px; }
+    #emoji-bg img:nth-child(9)  { width: 45px; }
+    #emoji-bg img:nth-child(11) { width: 40px; }
+    /* Hide maraming emojis sa mobile para hindi mag-overlap */
+    #emoji-bg img:nth-child(2),
+    #emoji-bg img:nth-child(3),
+    #emoji-bg img:nth-child(4),
+    #emoji-bg img:nth-child(10),
+    #emoji-bg img:nth-child(13),
+    #emoji-bg img:nth-child(14),
+    #emoji-bg img:nth-child(15),
+    #emoji-bg img:nth-child(16) { display: none; }
+}

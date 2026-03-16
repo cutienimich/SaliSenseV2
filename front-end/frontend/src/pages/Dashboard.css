@@ -535,3 +535,25 @@ body{
 
 
 
+
+
+/* Dashboard.css */
+.header, .main, .featured-survey,
+.survey-card, .dropdown-menu, .modal-card {
+    position: relative;
+    z-index: 1;
+}
+
+.dashboard {
+    background-color: transparent !important;
+    min-height: 100vh;
+    min-width: 100vw;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: transparent !important;
+}

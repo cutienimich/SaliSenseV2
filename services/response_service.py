@@ -1,5 +1,5 @@
 from services.translator_service import translate_tagalog_to_english
-from services.classifier_service import classify_text, classify_sentiment
+from services.classifier_service import classify_text_and_sentiment
 from services.db_service import get_db_connection
 
 
@@ -39,22 +39,23 @@ def process_response(question_id: int, text: str, respondent_email: str):
         if cursor.fetchone():
             return {"error": "You have already answered this question"}
 
+        
+
         # 4️⃣ Translate
         translated_text = translate_tagalog_to_english(text)
 
-        # 5️⃣ Classify emotion + sentiment with context
-        contextualized_text = f"{question_text} {translated_text}"
+        # 5️⃣ Classify using Groq — tanggalin na yung old classify_text at classify_sentiment
+        result = classify_text_and_sentiment(question_text, translated_text)
 
-        emotion_result = classify_text(contextualized_text)
-        emotion_label = emotion_result[0]["label"]
-        emotion_score = emotion_result[0]["score"]
+        emotion_label = result["emotion"]
+        emotion_score = result["emotion_score"]
+        sentiment_label = result["sentiment"]
+        sentiment_score = result["sentiment_score"]
 
-        print(f"Classifying sentiment for: {contextualized_text}")
-        sentiment_result = classify_sentiment(contextualized_text)
-        print(f"Sentiment result: {sentiment_result}")
-        sentiment_label = sentiment_result["sentiment"]
-        sentiment_score = sentiment_result["score"]
-
+        print(f"Question: {question_text}")
+        print(f"Answer: {translated_text}")
+        print(f"Emotion: {emotion_label} ({emotion_score})")
+        print(f"Sentiment: {sentiment_label} ({sentiment_score})")
         # 6️⃣ Save to DB
         cursor.execute("""
             INSERT INTO responses 

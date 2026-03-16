@@ -689,7 +689,7 @@ const fetchAnalytics = async () => {
             <p className="empty-text">Wala pang mga sagot para sa analytics.</p>
         ) : (
             <>
-                {/* Overall Charts */}
+                {/* Overall Charts 
                 <div className="charts-row">
                     <div className="chart-box">
                         <h3>Kabuuang Distribusyon ng Sentiment</h3>
@@ -705,10 +705,10 @@ const fetchAnalytics = async () => {
                             colorMap={null}
                         />
                     </div>
-                </div>
+                </div>*/}
 
                 {/* Per Question */}
-                <h3 className="per-question-title">Per Tanong</h3>
+                <h3 className="per-question-title">Mga Tanong</h3>
                 {analytics.per_question.map(q => (
                     <div key={q.question_id} className="question-analytics">
                         <p className="q-analytics-text">{q.question_text}</p>

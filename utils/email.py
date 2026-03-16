@@ -47,7 +47,7 @@ def send_verification_email(to_email: str, token: str):
         return False
 
 def send_reset_email(email: str, token: str):
-    reset_link = f"https://salisense15.vercel.app/reset-password?token={token}"
+    reset_link = f"http://localhost:8000?token={token}"
 
     message = MIMEMultipart("alternative")
     message["Subject"] = "SaliSense - I-reset ang iyong Password"
