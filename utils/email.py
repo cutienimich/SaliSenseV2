@@ -6,7 +6,8 @@ from email.mime.multipart import MIMEMultipart
 MAIL_USERNAME = os.getenv("MAIL_USERNAME")
 MAIL_PASSWORD = os.getenv("MAIL_PASSWORD")
 MAIL_FROM = os.getenv("MAIL_FROM")
-BASE_URL = os.getenv("BASE_URL", "http://localhost:8000")
+BASE_URL = os.getenv("BASE_URL", "https://salisensev2.onrender.com")
+FRONTEND_URL = os.getenv("FRONTEND_URL", "https://salisense15.vercel.app")
 
 
 def send_verification_email(to_email: str, token: str):
@@ -42,8 +43,9 @@ def send_verification_email(to_email: str, token: str):
         print(f"Email sending failed: {e}")
         return False
 
+
 def send_reset_email(email: str, token: str):
-    reset_link = f"http://localhost:8000?token={token}"
+    reset_link = f"{FRONTEND_URL}/reset-password?token={token}"
 
     message = MIMEMultipart("alternative")
     message["Subject"] = "SaliSense - I-reset ang iyong Password"
@@ -52,22 +54,13 @@ def send_reset_email(email: str, token: str):
 
     html_content = f"""
     <html>
-        <body style="font-family: Arial, sans-serif; background-color: #1a1a1a; color: #ccc; padding: 40px;">
-            <div style="max-width: 480px; margin: 0 auto; background: #2a2a2a; border-radius: 16px; padding: 40px; border: 1px solid #404040;">
-                <h2 style="color: #FFB300; margin-bottom: 16px;">Reset ng Password</h2>
-                <p>Nag-request ka ng password reset para sa iyong <strong style="color: #FFB300;">SaliSense</strong> account.</p>
-                <p>I-click ang button sa ibaba para mag-reset ng password:</p>
-                <a href="{reset_link}" 
-                   style="display:inline-block; background:#FFB300; color:#303030; 
-                          padding:12px 28px; border-radius:8px; text-decoration:none; 
-                          font-weight:bold; margin: 16px 0;">
-                    I-reset ang Password
-                </a>
-                <p style="color: #aaa; font-size: 0.9rem;">Mag-e-expire ang link sa loob ng <strong>1 oras</strong>.</p>
-                <p style="color: #aaa; font-size: 0.9rem;">Kung hindi ikaw ang nag-request nito, balewalain ang email na ito.</p>
-                <hr style="border-color: #404040; margin-top: 24px;" />
-                <p style="color: #666; font-size: 0.8rem;">SaliSense — Survey System with Emotion Analysis</p>
-            </div>
+        <body style="font-family: Arial, sans-serif;">
+            <h2>Reset ng Password</h2>
+            <p>Nag-request ka ng password reset para sa iyong SaliSense account.</p>
+            <p>I-click ang link sa ibaba para mag-reset ng password:</p>
+            <p><a href="{reset_link}">{reset_link}</a></p>
+            <p>Mag-e-expire ang link sa loob ng <strong>1 oras</strong>.</p>
+            <p>Kung hindi ikaw ang nag-request nito, balewalain ang email na ito.</p>
         </body>
     </html>
     """
